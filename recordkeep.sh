@@ -12,6 +12,9 @@ TARGETFILE=""
 OUTPUT=""
 VERBOSE=0
 HELP="$(base64 -d <<< ICAgICAgICAgICAgICAgICAgICAgIC4gICAgICAgICAgICAgICAgIAosLS4gLC0uICwtLiAsLS4gLC0uICwtfCAuICwgLC0uICwtLiAsLS4gCnwgICB8LScgfCAgIHwgfCB8ICAgfCB8IHwvICB8LScgfC0nIHwgfCAKJyAgIGAtJyBgLScgYC0nICcgICBgLScgfFwgIGAtJyBgLScgfC0nIAogICAgICAgICAgICAgICAgICAgICAgICAnIGAgICAgICAgICB8ICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICcgICAKCg==)
+Developed by Oriel
+github.com/OrielOrielOriel
+
 This tool uses 'host -A' to retrieve any and all DNS records belonging to target hosts.
 
 	  Use -h To show this message.
