@@ -47,8 +47,3 @@ MX      minecraft.net.  0       minecraft-net.mail.protection.outlook.com.
 TXT     minecraft.net.  "google-site-verification=ssoFQZt3u8pNjxzZ4p8AQn40jGcR-CCqoiOvLU69oec"
 TXT     minecraft.net.  "v=spf1 include:spf.protection.outlook.com
 ```
-
-## Pasted into a spreadsheet
-
-![DNS Records pasted into a spreadsheet](/photos/spreadsheet.png)
-
