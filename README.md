@@ -9,6 +9,9 @@ DNS Record retrieval tool. Outputs in a tab delimited format, suitable for pasti
 '   `-' `-' `-' '   `-' |\  `-' `-' |-' 
                         ' `         |   
                                     '   
+Developed by Oriel
+github.com/OrielOrielOriel
+
 This tool uses 'host -A' to retrieve any and all DNS records belonging to target hosts.
 
           Use -h To show this message.
