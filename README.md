@@ -25,6 +25,7 @@ minecraft.com
 minecraft.net
 
 > ./recordkeep.sh -t targets.txt -v
+
 [+] Performing lookup on minecraft.com 
 TXT     minecraft.com.  "v=spf1 +a
 MX      minecraft.com.  0       minecraft.com.
@@ -33,6 +34,7 @@ NS      minecraft.com.  bns3.hosting-services.net.au.
 NS      minecraft.com.  bns1.hosting-services.net.au.
 NS      minecraft.com.  bns2.hosting-services.net.au.
 A       minecraft.com.  110.232.140.74
+
 [+] Performing lookup on minecraft.net 
 A       minecraft.net.  99.84.243.36
 A       minecraft.net.  99.84.243.62
