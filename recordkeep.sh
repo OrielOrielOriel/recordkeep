@@ -29,20 +29,19 @@ OPTIND=1
 
 if ! [ -x "$(command -v host)" ]; then
 	HOST=""
-	PROBLEMS="$PROBLEMS\
-	Host command not found."
+	PROBLEMS="$PROBLEMS Host command not found."
 fi
 
 if ! [ -w "$(pwd)" ]; then
 	WRITEABLE=""
-	PROBLEMS="$PROBLEMS\
-	Current directory not writeable."
+	PROBLEMS="$PROBLEMS Current directory not writeable."
 fi
 
 ###########################################
 #--------) Ingest CLI Arguments (---------#
 ###########################################
 # --) Targets file
+# --) If problems, exit.
 
 while getopts "h?t:o:v" opt; do
 	case "$opt" in 
@@ -52,6 +51,11 @@ while getopts "h?t:o:v" opt; do
 	v)	VERBOSE=1;;
 	esac
 done
+
+if [ "$PROBLEMS" ]; then
+	echo "$PROBLEMS"
+	exit 0
+fi
 
 ###########################################
 #-----------) Perform Lookup (------------#
