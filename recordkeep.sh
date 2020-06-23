@@ -25,6 +25,21 @@ If some FQDNs, which you are certain have associated DNS records, do not return 
 OPTIND=1
 
 ###########################################
+#--------) Ingest CLI Arguments (---------#
+###########################################
+# --) Targets file
+# --) If problems, exit.
+
+while getopts "h?t:o:v" opt; do
+	case "$opt" in 
+	h|\?) printf "$HELP"; exit 0;;
+	t)	TARGETFILE=$OPTARG;;
+	o)	OUTPUT=$OPTARG;;
+	v)	VERBOSE=1;;
+	esac
+done
+
+###########################################
 #--------) Establish Problems (-----------#
 ###########################################
 # --) Host command exists?
@@ -39,21 +54,6 @@ if ! [ -w "$(pwd)" ]; then
 	WRITEABLE=""
 	PROBLEMS="$PROBLEMS Current directory not writeable."
 fi
-
-###########################################
-#--------) Ingest CLI Arguments (---------#
-###########################################
-# --) Targets file
-# --) If problems, exit.
-
-while getopts "h?t:o:v" opt; do
-	case "$opt" in 
-	h|\?) printf "$HELP"; exit 0;;
-	t)	TARGETFILE=$OPTARG;;
-	o)	OUTPUT=$OPTARG;;
-	v)	VERBOSE=1;;
-	esac
-done
 
 if [ "$PROBLEMS" ]; then
 	echo "$PROBLEMS"
