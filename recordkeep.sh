@@ -72,7 +72,7 @@ while IFS="" read -r domain || [ -n "$domain" ]; do
 		printf "[+] Performing lookup on $domain \n"
 	fi
 	
-	host -A -W 3 $domain | awk '{ if (!a && $0~/ANSWER SECTION/) {a=1;next;} } a' | grep $domain | awk '{ printf $4 "\t" $1 "\t" $5 "\t" $6 "\n"}'
+	host -A -W 3 $domain | awk '{ if (!a && $0~/ANSWER SECTION/) {a=1;next;} } a' | grep $domain | awk '{for(i=5;i<=NF;++i)printf $4 "\t" $1 "\t" $i "\n"}'
 done < $TARGETFILE
 fi
 
@@ -84,6 +84,6 @@ while IFS="" read -r domain || [ -n "$domain" ]; do
 		printf "[+] Performing lookup on $domain \n"
 	fi
 
-	host -A -W 3 $domain | awk '{ if (!a && $0~/ANSWER SECTION/) {a=1;next;} } a' | grep $domain | awk '{ printf $4 "\t" $1 "\t" $5 "\t" $6 "\n"}' >> $OUTPUT
+	host -A -W 3 $domain | awk '{ if (!a && $0~/ANSWER SECTION/) {a=1;next;} } a' | grep $domain | awk '{for(i=5;i<=NF;++i)printf $4 "\t" $1 "\t" $i "\n"}' >> $OUTPUT
 done < $TARGETFILE
 fi
